@@ -125,21 +125,13 @@ for i in range(len(model)):
 # In[7]:
 
 
-### courtesy of Python for Atmospheric Scientist
+### The code below for land-sea mask application is adapted from the lesson on the webpage Python for Atmospheric and Ocean Scientists by Irving D.
 
 import cmocean
 import cartopy.crs as ccrs
 
 def apply_mask(darray, sftlf_file, realm):
-    """Mask ocean or land using a sftlf (land surface fraction) file.
-   
-    Args:
-      darray (xarray.DataArray): Data to mask
-      sftlf_file (str): Land surface fraction file
-      realm (str): Realm to mask
-   
-    """
-  
+    
     dset = sftlf_file
   
     if realm == 'land':
