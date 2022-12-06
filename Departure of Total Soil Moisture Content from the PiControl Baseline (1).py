@@ -125,7 +125,7 @@ for i in range(len(model)):
 # In[7]:
 
 
-### The code below for land-sea mask application is adapted from the lesson on the webpage Python for Atmospheric and Ocean Scientists by Irving D.
+### The code below for land-sea mask application is adapted from the lesson on the webpage Python for Atmosphere and Ocean Scientists by Irving D (2019).
 
 import cmocean
 import cartopy.crs as ccrs
