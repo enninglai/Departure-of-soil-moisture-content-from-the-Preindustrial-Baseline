@@ -147,6 +147,7 @@ realm = 'ocean'
 
 # In[8]:
 
+### The functions below used to segregate the data into IPCC climate reference regions are provided by Iturbide et al. (2020) on ATLAS GitHub repository.
 
 ar6_land = regionmask.defined_regions.ar6.land
 
