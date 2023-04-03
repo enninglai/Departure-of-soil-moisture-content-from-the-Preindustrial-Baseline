@@ -65,7 +65,7 @@ for i in range(len(model)):
 # In[3]:
 
 
-### Model Correction for CanESM5
+## Model Correction for CanESM5
 
 df_sm_model_pc = df.query(f"variable_id == 'mrso' & experiment_id == 'piControl' & table_id == 'Lmon'  & source_id == '{model[1]}'")
 ds_mrso_pc = xr.open_zarr(fsspec.get_mapper(df_sm_model_pc.zstore.values[1]), consolidated=True)
@@ -3242,15 +3242,15 @@ cmap = ListedColormap(kelly_colors[0:15])
 model = ['ACCESS-CM2', 'CanESM5', 'CESM2', 'CESM2-WACCM', 'CNRM-CM6-1', 'CNRM-ESM2-1', 'EC-Earth3', 'EC-Earth3-Veg', 
          'GFDL-ESM4', 'IPSL-CM6A-LR', 'MIROC6', 'MIROC-ES2L', 'MPI-ESM1-2-HR', 'UKESM1-0-LL']
 
-first_four_up_SS126 = df_up_SS126[model[0:15]]
+frequency_plot_up_SS126 = df_up_SS126[model[0:15]]
 
-ax = first_four_up_SS126.loc[1:44].plot.bar( figsize=(30,8), cmap=cmap, rot=0, width = 0.7, legend=False)
+ax = frequency_plot_up_SS126.loc[1:44].plot.bar( figsize=(30,8), cmap=cmap, rot=0, width = 0.7, legend=False)
 plt.ylabel('Number of Months', fontsize=15)
 plt.xticks(np.linspace(0, 42, 43), region_abbrev[1:44], rotation = 90, fontsize=13);
 
 
-first_four_down_SS126 = -1 * df_down_SS126[model[0:15]]
-first_four_down_SS126.loc[1:44].plot.bar(ax= ax,figsize=(15,6), cmap=cmap, rot=0, width = 0.7, legend=False)
+frequency_plot_down_SS126 = -1 * df_down_SS126[model[0:15]]
+frequency_plot_down_SS126.loc[1:44].plot.bar(ax= ax,figsize=(15,6), cmap=cmap, rot=0, width = 0.7, legend=False)
 plt.xlabel('Climate Reference Regions', fontsize=15)
 plt.ylabel('Number of Months', fontsize=15)
 plt.xticks(np.linspace(0, 42, 43), region_abbrev[1:44], rotation = 90);
@@ -3262,15 +3262,15 @@ plt.savefig('SS126_num_mon_dep.png', bbox_inches='tight', dpi=250)
 # In[136]:
 
 
-first_four_up_SS126 = df_up_SS126[model[0:15]]
+frequency_plot_up_SS126 = df_up_SS126[model[0:15]]
 
-ax = first_four_up_SS126.loc[1:44].plot.bar( figsize=(30,8), cmap=cmap, rot=0, width = 0.7, legend=False)
+ax = frequency_plot_up_SS126.loc[1:44].plot.bar( figsize=(30,8), cmap=cmap, rot=0, width = 0.7, legend=False)
 plt.ylabel('Number of Months', fontsize=15)
 plt.xticks(np.linspace(0, 42, 43), region_abbrev[1:44], rotation = 90, fontsize=13);
 
 
-first_four_down_SS126 = -1 * df_down_SS126[model[0:15]]
-first_four_down_SS126.loc[1:44].plot.bar(ax= ax,figsize=(15,6), cmap=cmap, rot=0, width = 0.7, legend=False)
+frequency_plot_down_SS126 = -1 * df_down_SS126[model[0:15]]
+frequency_plot_down_SS126.loc[1:44].plot.bar(ax= ax,figsize=(15,6), cmap=cmap, rot=0, width = 0.7, legend=False)
 plt.xlabel('Climate Reference Regions', fontsize=15)
 plt.ylabel('Number of Months', fontsize=15)
 plt.xticks(np.linspace(0, 42, 43), region_abbrev[1:44], rotation = 90);
@@ -3282,14 +3282,14 @@ plt.savefig('SS126_num_mon_dep.png', bbox_inches='tight', dpi=250)
 # In[137]:
 
 
-first_four_up_SS370 = df_up_SS370[model[0:15]] 
-ax = first_four_up_SS370.loc[1:44].plot.bar(figsize=(15,8), cmap=cmap, rot=0, width = 0.7, legend=False)
+frequency_plot_up_SS370 = df_up_SS370[model[0:15]] 
+ax = frequency_plot_up_SS370.loc[1:44].plot.bar(figsize=(15,8), cmap=cmap, rot=0, width = 0.7, legend=False)
 plt.ylabel('Number of Months', fontsize=15)
 plt.xticks(np.linspace(0, 42, 43), region_abbrev[1:44], rotation = 90, fontsize=13);
 
 
-first_four_down_SS370 = -1 * df_down_SS370[model[0:15]] 
-first_four_down_SS370.loc[1:44].plot.bar(ax= ax, figsize=(15,6), cmap=cmap, rot=0, width = 0.7, legend=False)
+frequency_plot_down_SS370 = -1 * df_down_SS370[model[0:15]] 
+frequency_plot_down_SS370.loc[1:44].plot.bar(ax= ax, figsize=(15,6), cmap=cmap, rot=0, width = 0.7, legend=False)
 plt.xlabel('Climate Reference Regions', fontsize=15)
 plt.ylabel('Number of Months', fontsize=15)
 plt.xticks(np.linspace(0, 42, 43), region_abbrev[1:44], rotation = 90);
@@ -3301,14 +3301,14 @@ plt.savefig('SS370_num_mon_dep.png', bbox_inches='tight', dpi=250)
 # In[138]:
 
 
-first_four_up_SS585 = df_up_SS585[model[0:14]] 
-ax = first_four_up_SS585.loc[1:44].plot.bar(figsize=(15,6), cmap=cmap, rot=0, width = 0.7, legend=False)
+frequency_plot_up_SS585 = df_up_SS585[model[0:14]] 
+ax = frequency_plot_up_SS585.loc[1:44].plot.bar(figsize=(15,6), cmap=cmap, rot=0, width = 0.7, legend=False)
 plt.ylabel('Number of Months', fontsize=15)
 plt.xticks(np.linspace(0, 42, 43), region_abbrev[1:44], rotation = 90, fontsize=13);
 
 
-first_four_down_SS585 = -1 * df_down_SS585[model[0:14]] 
-first_four_down_SS585.loc[1:44].plot.bar(ax= ax, figsize=(15,6), cmap=cmap, rot=0, width = 0.7, legend = False)
+frequency_plot_down_SS585 = -1 * df_down_SS585[model[0:14]] 
+frequency_plot_down_SS585.loc[1:44].plot.bar(ax= ax, figsize=(15,6), cmap=cmap, rot=0, width = 0.7, legend = False)
 plt.xlabel('Climate Reference Regions', fontsize=15)
 plt.ylabel('Number of Months', fontsize=15)
 plt.xticks(np.linspace(0, 42, 43), region_abbrev[1:44], rotation = 90);
